@@ -190,7 +190,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 sm:py-32 relative bg-[#08090D] overflow-hidden">
+    <section id="contact" className="py-24 sm:py-32 relative bg-white dark:bg-[#08090D] overflow-hidden transition-colors duration-300">
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -203,14 +203,14 @@ export default function Contact() {
         >
           {/* Section Header */}
           <div className="text-center sm:text-left mb-16 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-mono font-medium mb-4">
               <Mail size={14} />
               <span>08 // GET IN TOUCH</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-4">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight mb-4">
               Let's Build Impactful Systems Together.
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed font-light">
               Available for full-time Software Development Engineer roles, full-stack development, and AI engineering opportunities.
             </p>
           </div>
@@ -218,8 +218,8 @@ export default function Contact() {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left Column: Direct Channels & Resume Card */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="rounded-3xl p-6 sm:p-8 bg-[#0E1017] border border-white/[0.08] shadow-xl">
-                <h3 className="font-display font-bold text-xl text-white mb-6">
+              <div className="rounded-3xl p-6 sm:p-8 bg-slate-50 dark:bg-[#0E1017] border border-slate-200 dark:border-white/[0.08] shadow-xl">
+                <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white mb-6">
                   Verified Contact Channels
                 </h3>
 
@@ -229,14 +229,14 @@ export default function Contact() {
                     return (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3.5 rounded-2xl bg-[#131620] border border-white/[0.05] hover:border-purple-500/30 transition-all group"
+                        className="flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#131620] border border-slate-200/80 dark:border-white/[0.05] hover:border-purple-500/30 transition-all group"
                       >
                         <div className="flex items-center gap-3.5">
-                          <div className="w-10 h-10 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform flex-shrink-0">
+                          <div className="w-10 h-10 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform flex-shrink-0">
                             <Icon size={18} />
                           </div>
                           <div>
-                            <span className="text-[11px] font-mono text-gray-500 block uppercase tracking-wider">
+                            <span className="text-[11px] font-mono text-slate-500 dark:text-gray-500 block uppercase tracking-wider">
                               {channel.label}
                             </span>
                             {channel.href ? (
@@ -244,12 +244,12 @@ export default function Contact() {
                                 href={channel.href}
                                 target={channel.href.startsWith('http') ? '_blank' : undefined}
                                 rel={channel.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                className="text-xs sm:text-sm font-medium text-white hover:text-purple-300 transition-colors"
+                                className="text-xs sm:text-sm font-medium text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-300 transition-colors"
                               >
                                 {channel.value}
                               </a>
                             ) : (
-                              <span className="text-xs sm:text-sm font-medium text-white">
+                              <span className="text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
                                 {channel.value}
                               </span>
                             )}
@@ -259,10 +259,10 @@ export default function Contact() {
                         {channel.label === 'Email Direct' && (
                           <button
                             onClick={copyEmail}
-                            className="p-2 rounded-lg bg-[#0E1017] hover:bg-white/[0.08] text-gray-400 hover:text-white transition-colors"
+                            className="p-2 rounded-lg bg-slate-100 dark:bg-[#0E1017] hover:bg-slate-200 dark:hover:bg-white/[0.08] text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                             title="Copy email to clipboard"
                           >
-                            {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
+                            {copied ? <Check size={14} className="text-emerald-500 dark:text-emerald-400" /> : <Copy size={14} />}
                           </button>
                         )}
                       </div>
@@ -272,20 +272,20 @@ export default function Contact() {
               </div>
 
               {/* Resume Card */}
-              <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-purple-950/40 via-[#0E1017] to-indigo-950/40 border border-purple-500/20 shadow-xl">
+              <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-purple-50 via-slate-50 to-indigo-50 dark:from-purple-950/40 dark:via-[#0E1017] dark:to-indigo-950/40 border border-purple-200 dark:border-purple-500/20 shadow-xl">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-300">
+                  <div className="w-12 h-12 rounded-2xl bg-purple-600/10 dark:bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-300">
                     <FileDown size={24} />
                   </div>
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-purple-900/50 text-purple-300 border border-purple-700/50">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-700/50">
                     PDF &bull; 199 KB
                   </span>
                 </div>
 
-                <h4 className="font-display font-bold text-lg text-white mb-2">
+                <h4 className="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
                   Official Engineering Resume
                 </h4>
-                <p className="text-xs text-gray-300 leading-relaxed font-light mb-5">
+                <p className="text-xs text-slate-600 dark:text-gray-300 leading-relaxed font-light mb-5">
                   Verified candidate credentials, technical coursework, SDE internship assignment details, and project stack breakdown.
                 </p>
 
@@ -304,10 +304,10 @@ export default function Contact() {
 
             {/* Right Column: Contact Form */}
             <div className="lg:col-span-7">
-              <div className="rounded-3xl p-6 sm:p-9 bg-[#0E1017] border border-white/[0.08] shadow-2xl">
+              <div className="rounded-3xl p-6 sm:p-9 bg-slate-50 dark:bg-[#0E1017] border border-slate-200 dark:border-white/[0.08] shadow-2xl">
                 {/* Presets Header */}
                 <div className="mb-6">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-purple-400 uppercase tracking-wider mb-2.5">
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2.5 font-medium">
                     <MessageSquare size={14} />
                     <span>Quick Message Presets</span>
                   </div>
@@ -317,7 +317,7 @@ export default function Contact() {
                         key={idx}
                         type="button"
                         onClick={() => applyTemplate(tpl.subject, tpl.message)}
-                        className="px-3 py-1.5 rounded-lg bg-[#131620] hover:bg-[#1A1E2C] text-gray-300 hover:text-white border border-white/[0.06] text-xs font-mono transition-colors text-left"
+                        className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#131620] hover:bg-slate-100 dark:hover:bg-[#1A1E2C] text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/[0.06] text-xs font-mono transition-colors text-left"
                       >
                         {tpl.label}
                       </button>
@@ -343,8 +343,8 @@ export default function Contact() {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">
-                        Your Name <span className="text-purple-400">*</span>
+                      <label htmlFor="name" className="block text-xs font-mono text-slate-600 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
+                        Your Name <span className="text-purple-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -354,13 +354,13 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Recruiter or Team Name"
-                        className="w-full px-4 py-3 rounded-xl bg-[#131620] border border-white/[0.08] text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#131620] border border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">
-                        Your Email <span className="text-purple-400">*</span>
+                      <label htmlFor="email" className="block text-xs font-mono text-slate-600 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
+                        Your Email <span className="text-purple-500">*</span>
                       </label>
                       <input
                         type="email"
@@ -370,13 +370,13 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="recruiter@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-[#131620] border border-white/[0.08] text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#131620] border border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">
+                    <label htmlFor="subject" className="block text-xs font-mono text-slate-600 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
                       Subject
                     </label>
                     <input
@@ -386,13 +386,13 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="e.g. SDE Opportunity / Technical Collaboration"
-                      className="w-full px-4 py-3 rounded-xl bg-[#131620] border border-white/[0.08] text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#131620] border border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">
-                      Message <span className="text-purple-400">*</span>
+                    <label htmlFor="message" className="block text-xs font-mono text-slate-600 dark:text-gray-400 mb-1.5 uppercase tracking-wider">
+                      Message <span className="text-purple-500">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -402,7 +402,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Write your note or select a quick preset above..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#131620] border border-white/[0.08] text-white text-sm placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#131620] border border-slate-300 dark:border-white/[0.08] text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
                     />
                   </div>
 

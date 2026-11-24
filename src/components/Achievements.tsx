@@ -76,7 +76,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-24 sm:py-32 relative bg-[#0E1017] overflow-hidden">
+    <section id="achievements" className="py-24 sm:py-32 relative bg-slate-50 dark:bg-[#0E1017] overflow-hidden transition-colors duration-300">
       {/* Background radial glow */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-[130px] pointer-events-none" />
 
@@ -89,14 +89,14 @@ export default function Achievements() {
         >
           {/* Section Header */}
           <div className="text-center sm:text-left mb-16 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-mono font-medium mb-4">
               <Trophy size={14} />
               <span>06 // CREDENTIALS &amp; MILESTONES</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-4">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight mb-4">
               Verified Certifications &amp; Achievements
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed font-light">
               Only authentic credentials, verified certificates, algorithmic profiles, and engineering benchmarks.
             </p>
           </div>
@@ -108,7 +108,7 @@ export default function Achievements() {
               return (
                 <div
                   key={index}
-                  className="rounded-3xl p-6 sm:p-8 bg-[#131620] border border-white/[0.08] hover:border-purple-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
+                  className="rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#131620] border border-slate-200 dark:border-white/[0.08] hover:border-purple-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between group"
                 >
                   <div>
                     {/* Top Row */}
@@ -118,34 +118,34 @@ export default function Achievements() {
                           <Icon size={22} />
                         </div>
                         <div>
-                          <span className="text-[11px] font-mono text-purple-400 block">
+                          <span className="text-[11px] font-mono text-purple-600 dark:text-purple-400 block font-medium">
                             {item.category}
                           </span>
-                          <span className="text-xs text-gray-400 font-mono">
+                          <span className="text-xs text-slate-500 dark:text-gray-400 font-mono">
                             {item.date}
                           </span>
                         </div>
                       </div>
 
-                      <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-[#0E1017] border border-white/[0.08] text-gray-300">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-slate-100 dark:bg-[#0E1017] border border-slate-200/80 dark:border-white/[0.08] text-slate-700 dark:text-gray-300">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="font-display font-bold text-xl text-white mb-1 group-hover:text-purple-300 transition-colors">
+                    <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white mb-1 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                       {item.title}
                     </h3>
-                    <div className="text-xs font-mono font-semibold text-gray-400 mb-3">
-                      Issued by: <span className="text-white">{item.issuer}</span>
+                    <div className="text-xs font-mono font-semibold text-slate-500 dark:text-gray-400 mb-3">
+                      Issued by: <span className="text-slate-800 dark:text-white">{item.issuer}</span>
                     </div>
 
-                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                    <p className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Footer Action / Profiles */}
-                  <div className="pt-4 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-3">
+                  <div className="pt-4 border-t border-slate-100 dark:border-white/[0.06] flex flex-wrap items-center justify-between gap-3">
                     <span className={`text-xs font-mono font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
                       {item.stats}
                     </span>
@@ -158,7 +158,7 @@ export default function Achievements() {
                             href={prof.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0E1017] hover:bg-white/[0.08] text-[11px] font-mono text-gray-300 hover:text-white border border-white/[0.06] transition-colors"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#0E1017] hover:bg-slate-200 dark:hover:bg-white/[0.08] text-[11px] font-mono text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/[0.06] transition-colors"
                           >
                             <span>{prof.name}</span>
                             <ExternalLink size={11} />
@@ -170,13 +170,13 @@ export default function Achievements() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-mono text-purple-400 hover:text-purple-300"
+                        className="inline-flex items-center gap-1 text-xs font-mono text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium"
                       >
                         <span>View Project</span>
                         <ExternalLink size={12} />
                       </a>
                     ) : (
-                      <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
+                      <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-medium">
                         <CheckCircle2 size={12} /> Verified by Resume
                       </span>
                     )}
@@ -187,7 +187,7 @@ export default function Achievements() {
           </div>
 
           {/* Verified Journey In Numbers Counter Matrix */}
-          <div className="rounded-3xl p-8 sm:p-10 bg-gradient-to-r from-purple-950/40 via-[#131620] to-indigo-950/40 border border-white/[0.08] shadow-2xl">
+          <div className="rounded-3xl p-8 sm:p-10 bg-slate-900 dark:bg-gradient-to-r dark:from-purple-950/40 dark:via-[#131620] dark:to-indigo-950/40 border border-slate-800 dark:border-white/[0.08] shadow-2xl">
             <h3 className="font-display font-bold text-xl sm:text-2xl text-white text-center mb-8">
               Verified Engineering Metrics
             </h3>
@@ -196,7 +196,7 @@ export default function Achievements() {
               {verifiedMetrics.map((stat, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl p-4 sm:p-5 bg-[#0E1017]/80 border border-white/[0.06] text-center"
+                  className="rounded-2xl p-4 sm:p-5 bg-slate-800/80 dark:bg-[#0E1017]/80 border border-slate-700/60 dark:border-white/[0.06] text-center"
                 >
                   <div className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-1 tracking-tight">
                     {stat.value}
@@ -204,7 +204,7 @@ export default function Achievements() {
                   <div className="text-xs sm:text-sm font-semibold text-purple-300 mb-0.5">
                     {stat.label}
                   </div>
-                  <div className="text-[11px] font-mono text-gray-500">
+                  <div className="text-[11px] font-mono text-slate-400 dark:text-gray-500">
                     {stat.note}
                   </div>
                 </div>

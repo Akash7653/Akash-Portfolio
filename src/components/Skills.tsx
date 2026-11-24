@@ -35,7 +35,7 @@ export default function Skills() {
       subtitle: 'Core algorithmic and systems engineering languages',
       icon: Code2,
       accentColor: 'from-purple-500 to-indigo-600',
-      borderGlow: 'hover:border-purple-500/40',
+      borderGlow: 'hover:border-purple-400 dark:hover:border-purple-500/40',
       skills: [
         { name: 'Python', tag: 'Primary / AI' },
         { name: 'TypeScript', tag: 'Type-Safe' },
@@ -50,7 +50,7 @@ export default function Skills() {
       subtitle: 'Modern component architectures and responsive client UI',
       icon: Layers,
       accentColor: 'from-blue-500 to-cyan-500',
-      borderGlow: 'hover:border-cyan-500/40',
+      borderGlow: 'hover:border-cyan-400 dark:hover:border-cyan-500/40',
       skills: [
         { name: 'React.js', tag: 'Hooks / Context' },
         { name: 'Next.js', tag: 'SSR / App Router' },
@@ -66,7 +66,7 @@ export default function Skills() {
       subtitle: 'Robust distributed services, authentication, and protocols',
       icon: Server,
       accentColor: 'from-emerald-500 to-teal-600',
-      borderGlow: 'hover:border-emerald-500/40',
+      borderGlow: 'hover:border-emerald-400 dark:hover:border-emerald-500/40',
       skills: [
         { name: 'Node.js', tag: 'Runtime' },
         { name: 'Express.js', tag: 'Microservices' },
@@ -82,7 +82,7 @@ export default function Skills() {
       subtitle: 'Intelligent inference, agent memory, and vision models',
       icon: BrainCircuit,
       accentColor: 'from-violet-500 to-purple-600',
-      borderGlow: 'hover:border-purple-500/40',
+      borderGlow: 'hover:border-purple-400 dark:hover:border-purple-500/40',
       skills: [
         { name: 'LLM API Integration', tag: 'Prompting' },
         { name: 'Groq API', tag: 'Fast Inference' },
@@ -99,7 +99,7 @@ export default function Skills() {
       subtitle: 'Schema design, data modeling, and query optimization',
       icon: Database,
       accentColor: 'from-amber-500 to-orange-600',
-      borderGlow: 'hover:border-amber-500/40',
+      borderGlow: 'hover:border-amber-400 dark:hover:border-amber-500/40',
       skills: [
         { name: 'MongoDB', tag: 'Document Store' },
         { name: 'PostgreSQL', tag: 'ACID Relational' },
@@ -113,7 +113,7 @@ export default function Skills() {
       subtitle: 'Version control, containerization, and CI/CD workflows',
       icon: Wrench,
       accentColor: 'from-pink-500 to-rose-600',
-      borderGlow: 'hover:border-pink-500/40',
+      borderGlow: 'hover:border-pink-400 dark:hover:border-pink-500/40',
       skills: [
         { name: 'Git', tag: 'Branching Workflows' },
         { name: 'GitHub', tag: 'Collaboration' },
@@ -129,7 +129,7 @@ export default function Skills() {
       subtitle: 'Foundational theory, system design, and algorithms',
       icon: BookOpen,
       accentColor: 'from-indigo-500 to-blue-600',
-      borderGlow: 'hover:border-indigo-500/40',
+      borderGlow: 'hover:border-indigo-400 dark:hover:border-indigo-500/40',
       skills: [
         { name: 'Data Structures & Algorithms', tag: 'LeetCode / HackerRank' },
         { name: 'Object-Oriented Programming (OOP)', tag: 'Design Patterns' },
@@ -145,9 +145,9 @@ export default function Skills() {
     : categories.filter(c => c.id === selectedCategory);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 relative bg-[#0E1017] overflow-hidden">
+    <section id="skills" className="py-24 sm:py-32 relative bg-white dark:bg-[#0E1017] transition-colors duration-300 overflow-hidden">
       {/* Background Subtle Mesh */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#00000006_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
         <motion.div
@@ -158,26 +158,26 @@ export default function Skills() {
         >
           {/* Section Header */}
           <div className="text-center sm:text-left mb-12 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-500/20 text-cyan-700 dark:text-cyan-400 text-xs font-mono font-medium mb-4">
               <Sparkles size={14} />
               <span>02 // TECHNICAL COMPETENCIES</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-4">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight mb-4">
               Verified Technical Stack &amp; Tooling
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed font-light">
               Technologies and frameworks backed by real-world project code, academic rigor, and production internship experience.
             </p>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-white/[0.08]">
+          <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-slate-200 dark:border-white/[0.08]">
             <button
               onClick={() => setSelectedCategory('all')}
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 ${
                 selectedCategory === 'all'
                   ? 'bg-purple-600 text-white font-semibold shadow-md shadow-purple-600/30'
-                  : 'bg-[#131620] text-gray-400 hover:text-white hover:bg-[#1A1E2C]'
+                  : 'bg-slate-100 dark:bg-[#131620] text-slate-700 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-[#1A1E2C]'
               }`}
             >
               All Categories ({categories.length})
@@ -189,7 +189,7 @@ export default function Skills() {
                 className={`px-3.5 py-2 rounded-xl text-xs font-mono transition-all duration-200 ${
                   selectedCategory === c.id
                     ? 'bg-purple-600 text-white font-semibold shadow-md shadow-purple-600/30'
-                    : 'bg-[#131620] text-gray-400 hover:text-white hover:bg-[#1A1E2C]'
+                    : 'bg-slate-100 dark:bg-[#131620] text-slate-700 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-[#1A1E2C]'
                 }`}
               >
                 {c.title}
@@ -204,7 +204,7 @@ export default function Skills() {
               return (
                 <div
                   key={cat.id}
-                  className={`rounded-2xl p-6 bg-[#131620] border border-white/[0.08] ${cat.borderGlow} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between group`}
+                  className={`rounded-2xl p-6 bg-slate-50 dark:bg-[#131620] border border-slate-200 dark:border-white/[0.08] ${cat.borderGlow} transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-2xl flex flex-col justify-between group`}
                 >
                   <div>
                     {/* Category Header */}
@@ -214,14 +214,14 @@ export default function Skills() {
                           <Icon size={18} />
                         </div>
                         <div>
-                          <h3 className="font-display font-bold text-base text-white group-hover:text-purple-300 transition-colors">
+                          <h3 className="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                             {cat.title}
                           </h3>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-xs text-gray-400 font-light mb-5">
+                    <p className="text-xs text-slate-500 dark:text-gray-400 font-light mb-5">
                       {cat.subtitle}
                     </p>
 
@@ -230,13 +230,13 @@ export default function Skills() {
                       {cat.skills.map((skill, sIdx) => (
                         <div
                           key={sIdx}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0E1017] border border-white/[0.06] hover:border-purple-500/30 transition-colors"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-[#0E1017] border border-slate-200 dark:border-white/[0.06] hover:border-purple-400 dark:hover:border-purple-500/30 shadow-xs transition-colors"
                         >
-                          <span className="text-xs font-medium text-gray-200">
+                          <span className="text-xs font-medium text-slate-800 dark:text-gray-200">
                             {skill.name}
                           </span>
                           {skill.tag && (
-                            <span className="text-[10px] font-mono text-purple-400/80 bg-purple-950/40 px-1.5 py-0.5 rounded">
+                            <span className="text-[10px] font-mono text-purple-700 dark:text-purple-400/80 bg-purple-50 dark:bg-purple-950/40 px-1.5 py-0.5 rounded">
                               {skill.tag}
                             </span>
                           )}
@@ -245,9 +245,9 @@ export default function Skills() {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center justify-between text-[11px] font-mono text-gray-500">
+                  <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/[0.05] flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-gray-500">
                     <span>{cat.skills.length} verified technologies</span>
-                    <span className="text-emerald-400/80">&bull; Production Tested</span>
+                    <span className="text-emerald-600 dark:text-emerald-400/80 font-medium">&bull; Production Tested</span>
                   </div>
                 </div>
               );

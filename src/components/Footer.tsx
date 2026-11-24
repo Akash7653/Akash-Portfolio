@@ -16,14 +16,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#050608] text-white pt-16 pb-12 border-t border-white/[0.08] relative">
+    <footer className="bg-slate-950 dark:bg-[#050608] text-white pt-16 pb-12 border-t border-slate-800 dark:border-white/[0.08] relative transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/[0.06]">
+        <div className="grid md:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80 dark:border-white/[0.06]">
           {/* Col 1: Identity & Bio */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 via-indigo-600 to-cyan-500 p-[1px] shadow-lg">
-                <div className="w-full h-full bg-[#0E1017] rounded-[11px] flex items-center justify-center text-purple-400">
+                <div className="w-full h-full bg-slate-900 dark:bg-[#0E1017] rounded-[11px] flex items-center justify-center text-purple-400">
                   <Terminal size={19} />
                 </div>
               </div>

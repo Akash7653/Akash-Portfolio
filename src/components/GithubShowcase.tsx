@@ -105,7 +105,7 @@ export default function GithubShowcase() {
   }, []);
 
   return (
-    <section id="github" className="py-24 sm:py-32 relative bg-[#08090D] overflow-hidden">
+    <section id="github" className="py-24 sm:py-32 relative bg-slate-50 dark:bg-[#08090D] overflow-hidden transition-colors duration-300">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-purple-900/10 rounded-full blur-[130px] pointer-events-none" />
 
@@ -113,28 +113,28 @@ export default function GithubShowcase() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-mono font-medium mb-4">
               <Github size={14} />
               <span>07 // OPEN SOURCE &amp; REPOSITORIES</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-3">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight mb-3">
               GitHub Engineering Activity
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed font-light">
               Verified public repositories, full-stack monorepos, and machine learning models.
             </p>
           </div>
 
           {/* GitHub Stats Badge */}
-          <div className="flex items-center gap-4 bg-[#0E1017] p-4 rounded-2xl border border-white/[0.08] shadow-lg self-start md:self-auto">
-            <div className="w-12 h-12 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+          <div className="flex items-center gap-4 bg-white dark:bg-[#0E1017] p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] shadow-lg self-start md:self-auto">
+            <div className="w-12 h-12 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
               <FolderGit2 size={24} />
             </div>
             <div>
-              <div className="font-display font-extrabold text-2xl text-white">
+              <div className="font-display font-extrabold text-2xl text-slate-900 dark:text-white">
                 {profile.publicRepos}+
               </div>
-              <div className="text-xs font-mono text-gray-400">
+              <div className="text-xs font-mono text-slate-500 dark:text-gray-400">
                 Public Repositories
               </div>
             </div>
@@ -149,19 +149,19 @@ export default function GithubShowcase() {
               href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl p-6 bg-[#0E1017] border border-white/[0.08] hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between group"
+              className="rounded-2xl p-6 bg-white dark:bg-[#0E1017] border border-slate-200 dark:border-white/[0.08] hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between group"
             >
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-2 text-white group-hover:text-purple-300 transition-colors font-display font-bold text-base">
-                    <Terminal size={16} className="text-purple-400 flex-shrink-0" />
+                  <div className="flex items-center gap-2 text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors font-display font-bold text-base">
+                    <Terminal size={16} className="text-purple-600 dark:text-purple-400 flex-shrink-0" />
                     <span className="truncate">{repo.name}</span>
                   </div>
-                  <ExternalLink size={14} className="text-gray-500 group-hover:text-purple-400 transition-colors flex-shrink-0" />
+                  <ExternalLink size={14} className="text-slate-400 dark:text-gray-500 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex-shrink-0" />
                 </div>
 
-                <p className="text-xs text-gray-400 font-light leading-relaxed mb-4 line-clamp-3">
+                <p className="text-xs text-slate-600 dark:text-gray-400 font-light leading-relaxed mb-4 line-clamp-3">
                   {repo.description}
                 </p>
 
@@ -170,7 +170,7 @@ export default function GithubShowcase() {
                   {repo.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2 py-0.5 rounded-md bg-[#131620] border border-white/[0.04] text-[10px] font-mono text-gray-300"
+                      className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#131620] border border-slate-200/60 dark:border-white/[0.04] text-[10px] font-mono text-slate-700 dark:text-gray-300"
                     >
                       {tag}
                     </span>
@@ -179,22 +179,22 @@ export default function GithubShowcase() {
               </div>
 
               {/* Repo Meta Footer */}
-              <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-gray-400">
+              <div className="pt-3 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-500 dark:text-gray-400">
                 <span className="flex items-center gap-1.5">
                   <span className={`w-2 h-2 rounded-full ${
-                    repo.language === 'TypeScript' ? 'bg-blue-400' :
-                    repo.language === 'Python' ? 'bg-amber-400' :
-                    'bg-yellow-400'
+                    repo.language === 'TypeScript' ? 'bg-blue-500' :
+                    repo.language === 'Python' ? 'bg-amber-500' :
+                    'bg-yellow-500'
                   }`} />
                   {repo.language}
                 </span>
 
                 <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1 hover:text-white">
-                    <Star size={12} className="text-purple-400" />
+                  <span className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white">
+                    <Star size={12} className="text-purple-500 dark:text-purple-400" />
                     <span>{repo.stars}</span>
                   </span>
-                  <span className="flex items-center gap-1 hover:text-white">
+                  <span className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white">
                     <GitFork size={12} />
                     <span>{repo.forks}</span>
                   </span>
@@ -210,7 +210,7 @@ export default function GithubShowcase() {
             href={profile.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#131620] hover:bg-[#1A1E2C] border border-white/[0.08] hover:border-purple-500/40 text-gray-200 hover:text-white text-xs font-mono font-medium transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-[#131620] hover:bg-slate-100 dark:hover:bg-[#1A1E2C] border border-slate-200 dark:border-white/[0.08] hover:border-purple-500/40 text-slate-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-white text-xs font-mono font-medium transition-all shadow-sm"
           >
             <Github size={16} />
             <span>View All Repositories on GitHub &rarr;</span>

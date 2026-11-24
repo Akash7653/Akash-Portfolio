@@ -14,7 +14,7 @@ import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#08090D] text-[#F8FAFC] selection:bg-purple-600/30 selection:text-white transition-colors duration-300 relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#08090D] text-slate-900 dark:text-[#F8FAFC] selection:bg-purple-600/30 selection:text-white transition-colors duration-300 relative">
       <ScrollProgress />
       <FloatingIcons />
       <Navigation />

@@ -91,7 +91,7 @@ export default function Navigation() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-[#08090D]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl py-3.5'
+            ? 'bg-white/85 dark:bg-[#08090D]/85 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-md dark:shadow-2xl py-3.5'
             : 'bg-transparent py-5'
         }`}
       >
@@ -104,28 +104,28 @@ export default function Navigation() {
               aria-label="Back to top"
             >
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 via-indigo-600 to-cyan-500 p-[1px] shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
-                <div className="w-full h-full bg-[#0E1017] rounded-[11px] flex items-center justify-center text-purple-400 group-hover:text-white transition-colors">
+                <div className="w-full h-full bg-white dark:bg-[#0E1017] rounded-[11px] flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-white transition-colors">
                   <Terminal size={19} className="group-hover:scale-110 transition-transform duration-300" />
                 </div>
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-lg text-white tracking-tight group-hover:text-purple-300 transition-colors">
-                    Akash<span className="text-purple-400">.</span>dev
+                  <span className="font-display font-bold text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                    Akash<span className="text-purple-600 dark:text-purple-400">.</span>dev
                   </span>
-                  <span className="hidden xl:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono font-medium text-emerald-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="hidden xl:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-[11px] font-mono font-medium text-emerald-700 dark:text-emerald-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     Available for SDE Roles
                   </span>
                 </div>
-                <span className="text-[11px] text-gray-400 font-mono tracking-wider">
+                <span className="text-[11px] text-slate-500 dark:text-gray-400 font-mono tracking-wider">
                   Software Engineer &bull; AI/ML
                 </span>
               </div>
             </button>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 bg-[#131620]/90 border border-white/[0.08] px-3 py-1.5 rounded-full shadow-inner backdrop-blur-md">
+            <nav className="hidden lg:flex items-center gap-1 bg-white/90 dark:bg-[#131620]/90 border border-slate-200/80 dark:border-white/[0.08] px-3 py-1.5 rounded-full shadow-sm dark:shadow-inner backdrop-blur-md">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -135,13 +135,13 @@ export default function Navigation() {
                     className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                       isActive
                         ? 'text-white font-semibold'
-                        : 'text-gray-400 hover:text-white hover:bg-white/[0.04]'
+                        : 'text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04]'
                     }`}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activePill"
-                        className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-indigo-600/80 rounded-full -z-10 shadow-sm"
+                        className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full -z-10 shadow-sm"
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -159,7 +159,7 @@ export default function Navigation() {
                 download="Akash-Koravena-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-lg shadow-purple-600/20 hover:shadow-purple-600/40 transition-all duration-300 hover:scale-[1.02] border border-white/10"
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-md hover:shadow-purple-600/30 transition-all duration-300 hover:scale-[1.02] border border-white/10"
               >
                 <FileDown size={14} />
                 <span>Resume</span>
@@ -168,20 +168,21 @@ export default function Navigation() {
               {/* Theme Toggle (Dark/Light mode switch) */}
               <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-xl bg-[#131620] hover:bg-[#1A1E2C] border border-white/[0.08] text-gray-300 hover:text-white transition-all duration-200 focus:outline-none"
+                className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#131620] dark:hover:bg-[#1A1E2C] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-gray-300 transition-all duration-200 focus:outline-none"
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               >
                 {theme === 'dark' ? (
                   <Sun size={17} className="text-amber-400 hover:rotate-45 transition-transform" />
                 ) : (
-                  <Moon size={17} className="text-purple-400 hover:-rotate-12 transition-transform" />
+                  <Moon size={17} className="text-purple-600 hover:-rotate-12 transition-transform" />
                 )}
               </button>
 
               {/* Mobile Menu Toggle Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2.5 rounded-xl bg-[#131620] border border-white/[0.08] text-gray-300 hover:text-white transition-colors"
+                className="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-[#131620] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                 aria-label="Toggle navigation menu"
               >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -198,7 +199,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden bg-[#08090D]/95 backdrop-blur-2xl border-b border-white/[0.08] px-4 pt-4 pb-6 overflow-hidden"
+              className="lg:hidden bg-white/95 dark:bg-[#08090D]/95 backdrop-blur-2xl border-b border-slate-200 dark:border-white/[0.08] px-4 pt-4 pb-6 overflow-hidden shadow-xl"
             >
               <div className="flex flex-col gap-1.5 mb-5">
                 {navItems.map((item) => (
@@ -207,33 +208,33 @@ export default function Navigation() {
                     onClick={() => scrollToSection(item.href)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       activeSection === item.id
-                        ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30 font-semibold'
-                        : 'text-gray-300 hover:bg-white/[0.05] hover:text-white'
+                        ? 'bg-purple-50 dark:bg-purple-600/20 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 font-semibold'
+                        : 'text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/[0.05] hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    <item.icon size={17} className="text-purple-400" />
+                    <item.icon size={17} className="text-purple-600 dark:text-purple-400" />
                     <span>{item.name}</span>
                   </button>
                 ))}
               </div>
 
               {/* Mobile Actions: Resume + Links */}
-              <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-3">
+              <div className="pt-4 border-t border-slate-200 dark:border-white/[0.08] flex flex-col gap-3">
                 <a
                   href="/Akash-Koravena-Resume.pdf"
                   download="Akash-Koravena-Resume.pdf"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold shadow-lg"
+                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold shadow-md"
                 >
                   <FileDown size={16} />
                   <span>Download Verified Resume PDF</span>
                 </a>
 
-                <div className="flex items-center justify-center gap-4 text-xs text-gray-400 pt-2">
+                <div className="flex items-center justify-center gap-4 text-xs text-slate-500 dark:text-gray-400 pt-2">
                   <a
                     href="https://github.com/Akash7653"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:text-white"
+                    className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white"
                   >
                     <Github size={15} /> GitHub <ExternalLink size={11} />
                   </a>
@@ -242,7 +243,7 @@ export default function Navigation() {
                     href="https://www.linkedin.com/in/akash-babu-koravena/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:text-white"
+                    className="flex items-center gap-1 hover:text-slate-900 dark:hover:text-white"
                   >
                     <Linkedin size={15} /> LinkedIn <ExternalLink size={11} />
                   </a>
@@ -258,7 +259,7 @@ export default function Navigation() {
         aria-label="Mobile Bottom Navigation"
         className="lg:hidden fixed bottom-3 left-0 right-0 z-40 px-4 pointer-events-none"
       >
-        <div className="pointer-events-auto max-w-sm mx-auto bg-[#0E1017]/90 backdrop-blur-2xl border border-white/[0.1] shadow-2xl rounded-2xl p-1.5 flex items-center justify-between">
+        <div className="pointer-events-auto max-w-sm mx-auto bg-white/95 dark:bg-[#0E1017]/90 backdrop-blur-2xl border border-slate-200/90 dark:border-white/[0.1] shadow-xl rounded-2xl p-1.5 flex items-center justify-between">
           {[
             { id: 'home', name: 'Home', href: '#', icon: Home },
             { id: 'skills', name: 'Skills', href: '#skills', icon: Code2 },
@@ -274,20 +275,20 @@ export default function Navigation() {
                 onClick={() => scrollToSection(item.href)}
                 className={`relative flex flex-col items-center justify-center py-2 px-2.5 rounded-xl transition-all flex-1 ${
                   isActive
-                    ? 'text-purple-300 font-bold'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'text-purple-600 dark:text-purple-300 font-bold'
+                    : 'text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
                 aria-label={`Jump to ${item.name}`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="mobileBottomPill"
-                    className="absolute inset-0 bg-purple-600/20 border border-purple-500/40 rounded-xl"
+                    className="absolute inset-0 bg-purple-100 dark:bg-purple-600/20 border border-purple-200 dark:border-purple-500/40 rounded-xl"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex flex-col items-center gap-1">
-                  <Icon size={16} className={isActive ? 'text-purple-400 stroke-[2.5px]' : 'stroke-2'} />
+                  <Icon size={16} className={isActive ? 'text-purple-600 dark:text-purple-400 stroke-[2.5px]' : 'stroke-2'} />
                   <span className="text-[10px] tracking-tight">{item.name}</span>
                 </span>
               </button>
